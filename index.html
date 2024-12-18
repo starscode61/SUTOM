@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtrage de mots</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold text-center mb-4">SUTOM</h1>
+    
+    <form id="filter-form" class="bg-white shadow-md rounded px-6 pt-6 pb-8">
+      <!-- Mot à deviner -->
+      <div class="mb-4">
+        <label for="mot-devine" class="block text-gray-700 font-bold mb-2">Mot à deviner :</label>
+        <input type="text" id="mot-devine" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ex: ar_re" required>
+      </div>
+
+      <!-- Lettres interdites -->
+      <div class="mb-4">
+        <label for="lettres-interdites" class="block text-gray-700 font-bold mb-2">Lettres interdites(sans espace) :</label>
+        <input type="text" id="lettres-interdites" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+
+      <!-- Lettres correctes mais mal placées -->
+      <div id="lettres-bonnes-section" class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2">Lettres correctes mais mal placées :</label>
+        <button type="button" id="add-lettre-btn" class="bg-blue-500 text-white px-2 py-1 rounded">Ajouter une lettre</button>
+        <div id="lettres-bonnes-list" class="mt-2"></div>
+      </div>
+
+      <!-- Bouton de filtrage -->
+      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded w-full">Filtrer</button>
+    </form>
+
+    <!-- Résultats -->
+    <div id="results" class="bg-white shadow-md rounded px-6 pt-6 pb-8 mt-4">
+      <h2 class="text-xl font-bold mb-4">Résultats :</h2>
+      <p id="result-count" class="mb-2 text-sm text-gray-600"></p>
+      <ul id="results-list" class="list-disc pl-5"></ul>
+    </div>
+  </div>
+</body>
+</html>
